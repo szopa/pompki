@@ -1,0 +1,31 @@
+.bundle
+db/*.sqlite3
+log/*.log
+tmp/
+.sass-cache/
+
+#TODO: Fix it after compass master becomes compatible with 3.1! (https://github.com/chriseppstein/compass/issues/337)
+public/stylesheets/
+
+# Rails extras
+config/database.yml
+config/resque.yml
+config/initializers/mailer.rb
+config/initializers/omniauth.rb
+
+doc/out/
+.yardoc/
+.rvmrc
+
+# System/IDE files
+Desktop.ini
+Thumbs.db
+nbproject
+.DS_Store
+.idea
+.redcar
+\#*#
+*.swp
+*.swo
+*~
+selenium-server-standalone-2.2.0.jar
