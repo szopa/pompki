@@ -7,6 +7,14 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+<div name = 'user_navigation'>
+  <%if user_signed_in?%>
+  	zalogowany jako <%= current_user.email=%>|
+  	<%=link_to 'Wyloguj się', destroy_user_session_path, :method=> :delete
+  <%else%>
+  	<%= link_to 'Zaloguj się', user_session_path =%> albo <%=link_to 'zarejestruj się', new_path  =%>
+  <%end%>
+<end>
 
 <%= yield %>
 
