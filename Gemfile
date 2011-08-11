@@ -4,7 +4,7 @@ gem 'rails', '3.1.0.rc5'
 
 # Bundle edge Rails instead:
 # gem 'rails',     :git => 'git://github.com/rails/rails.git'
-gem 'gruff'
+#gem "gruff", "~> 0.3.6"
 gem 'sqlite3'
 gem "therubyracer", "~> 0.9.2"
 gem 'devise', '1.4.2'
