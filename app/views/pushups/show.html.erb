@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Date:</b>
+  <%= @pushup.created_at %>
+</p>
+
+<p>
+  <b>Amount:</b>
+  <%= @pushup.amount %>
+</p>
+
+
+<%= link_to 'Edit', edit_pushup_path(@pushup) %> |
+<%= link_to 'Back', pushups_path %>

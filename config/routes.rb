@@ -1,4 +1,6 @@
 Pompki::Application.routes.draw do
+  resources :pushups
+
   get "home/index"
 
   devise_for :users

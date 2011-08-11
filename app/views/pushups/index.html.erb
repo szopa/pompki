@@ -1,0 +1,25 @@
+<h1>Listing pushups</h1>
+
+<table>
+  <tr>
+    <th>Date</th>
+    <th>Amount</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @pushups.each do |pushup| %>
+  <tr>
+    <td><%= "#{pushup.created_at.year}-#{pushup.created_at.month}-#{pushup.created_at.day}" %></td>
+    <td><%= pushup.amount %></td>
+    <td><%= link_to 'Show', pushup %></td>
+    <td><%= link_to 'Edit', edit_pushup_path(pushup) %></td>
+    <td><%= link_to 'Destroy', pushup, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Pushup', new_pushup_path %>

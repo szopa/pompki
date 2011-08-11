@@ -6,6 +6,5 @@ class CreatePushups < ActiveRecord::Migration
 
       t.timestamps
     end
-    add_index :pushups, :user_id
   end
 end
