@@ -9,24 +9,25 @@
         text: "Pushups by Day"
       },
       xAxis: {
-        type: "date"
+        type: "datetime"
       },
       yAxis: {
         title: {
           text: "Pushups"
         }
       },
-      series: [
-      {
+      series: [{
       pointInterval: <%= 1.day * 1000 %>,
-      startInterval:<%= current_user.pushups.first.created_at %>
-    #  data:<%= (current_user.pushups.first.created_at..Date.today).map {current_user.pushups.amount) %>
-      }
-      ]
+      pointStart: <%= 3.months.ago.to_i * 1000 %>,
+      data: <%=@pushups.each.map {|pushup| [pushup.without_hours, pushup.amount]}%>
+
+      }]
     });
   });
 </script>
 <div id="pushups_chart" style="width:560px; height:300px;"></div>
+<%=@pushups.each.map {|pushup| [pushup.without_hours, pushup.amount]}%>
+#<%= current_user.pushups.all%>
 <table>
   <tr>
     <th>Date</th>
