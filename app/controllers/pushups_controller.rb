@@ -25,7 +25,7 @@ before_filter :authenticate_user!
   # GET /pushups/new
   # GET /pushups/new.json
   def new
-    @pushup = current_user.pushups.new
+    @pushup = Pushup.new
 
     respond_to do |format|
       format.html # new.html.erb
@@ -41,7 +41,7 @@ before_filter :authenticate_user!
   # POST /pushups
   # POST /pushups.json
   def create
-    @pushup = current_user.pushups.new(params[:pushup])
+    @pushup = Pushup.new(params[:pushup])
 
     respond_to do |format|
       if @pushup.save

@@ -1,15 +1,23 @@
 <p id="notice"><%= notice %></p>
-
+<% if false %>
 <p>
   <b>User:</b>
   <%= @series.user_id %>
 </p>
-
+<% end %>
+<b>Ilość pompek</b>
+<% i = 0 %>
+<ol>
+<% for pushup in @series.pushups %>
+  <p>
+    <li> seria -
+    <%= pushup.amount %></li>
+  </p>
+<% end %>
+</ol>
 <p>
   <b>Sum:</b>
   <%= @series.sum %>
 </p>
-
-
 <%= link_to 'Edit', edit_series_path(@series) %> |
 <%= link_to 'Back', series_index_path %>

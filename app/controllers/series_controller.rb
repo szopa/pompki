@@ -24,8 +24,8 @@ class SeriesController < ApplicationController
   # GET /series/new
   # GET /series/new.json
   def new
-    @series = Series.new
-
+    @series = current_user.series.new
+    3.times { @series.pushups.build }
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @series }
@@ -40,7 +40,7 @@ class SeriesController < ApplicationController
   # POST /series
   # POST /series.json
   def create
-    @series = Series.new(params[:series])
+    @series = current_user.series.new(params[:series])
 
     respond_to do |format|
       if @series.save
@@ -51,6 +51,7 @@ class SeriesController < ApplicationController
         format.json { render json: @series.errors, status: :unprocessable_entity }
       end
     end
+    #@series.sum= @series.pushups.inject {|sum, n.amount| sum+nj.amount}
   end
 
   # PUT /series/1
