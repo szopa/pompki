@@ -1,4 +1,6 @@
 Pompki::Application.routes.draw do
+  resources :series
+
   resources :pushups
 
   get "home/index"

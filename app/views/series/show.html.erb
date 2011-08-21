@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>User:</b>
+  <%= @series.user_id %>
+</p>
+
+<p>
+  <b>Sum:</b>
+  <%= @series.sum %>
+</p>
+
+
+<%= link_to 'Edit', edit_series_path(@series) %> |
+<%= link_to 'Back', series_index_path %>
