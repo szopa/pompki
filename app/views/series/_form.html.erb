@@ -11,7 +11,7 @@
     </div>
   <% end %>
 <% if false %>
-  <div class="field">
+  <div class="fields">
     <%= f.label :user_id %><br />
     <%= f.number_field :user_id %>
   </div>
@@ -20,13 +20,12 @@
     <%= f.number_field :sum %>
   </div>
 <% end %>
-  <p> czesc </p>
+<ol>
   <%= f.fields_for :pushups do |builder| %>
-    <p>
-      <%= builder.label :amount, ' ilość pompek' %>
-      <%= builder.number_field :amount %>
-    </p>
+    <%= render 'pushup_fields', :f => builder %>
   <% end %>
+  <p><%= link_to_add_fields "Add series", f, :pushups %></p>
+</ol>
   <div class="actions">
     <%= f.submit %>
   </div>

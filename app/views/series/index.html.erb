@@ -1,5 +1,32 @@
 <h1>Listing series</h1>
+<script type="text/javascript" charset="utf-8">
+  $(function() {
+    new Highcharts.Chart({
+      chart: {
+        renderTo: "pushups_chart"
+      },
+      title: {
+        text: "Pushups by Day"
+      },
+      xAxis: {
+        type: "datetime"
+      },
+      yAxis: {
+        title: {
+          text: "Pushups"
+        }
+      },
+      series: [{
+      pointInterval: <%= 1.day * 1000 %>,
+      pointStart: <%= 3.months.ago.to_i * 1000 %>,
+      data: <%=@series.each.map {|series| [series.without_hours, series.sum]}%>
 
+      }]
+    });
+  });
+</script>
+<div id="pushups_chart" style="width:560px; height:300px;"></div>
+p <%=@series.each.map {|series| [series.without_hours, series.sum]} %>
 <table>
   <tr>
     <th>User</th>

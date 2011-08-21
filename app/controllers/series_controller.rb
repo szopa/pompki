@@ -2,7 +2,7 @@ class SeriesController < ApplicationController
   # GET /series
   # GET /series.json
   def index
-    @series = Series.all
+    @series = current_user.series.all
 
     respond_to do |format|
       format.html # index.html.erb
@@ -51,7 +51,7 @@ class SeriesController < ApplicationController
         format.json { render json: @series.errors, status: :unprocessable_entity }
       end
     end
-    #@series.sum= @series.pushups.inject {|sum, n.amount| sum+nj.amount}
+   # @series.sum= @series.pushups.amount.inject {|e, v| e+v}
   end
 
   # PUT /series/1

@@ -1,5 +1,5 @@
 class Pushup < ActiveRecord::Base
-  validates :amount, :presence => true, :numericality => {:greater_than => 0}
+  validates :amount, :presence => true, :numericality => {:greater_than => 0, :only_integer => true}
   belongs_to :series
   
   def without_hours

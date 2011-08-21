@@ -1,0 +1,9 @@
+ <p class = 'fields' >
+ <li>
+  <%= f.label :amount, 'seria:' %>
+  <%= f.number_field :amount %>
+  <%= f.hidden_field :_destroy %>
+  <%= link_to_function 'usuń', 'remove_fields(this)' %>
+  </li>
+</p>
+
