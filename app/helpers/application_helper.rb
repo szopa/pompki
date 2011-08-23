@@ -14,10 +14,4 @@ module ApplicationHelper
   def series_for_charts
     current_user.series.each.map {|series| [series.without_hours, series.sum]}
   end
-  
-  def update_sum(id)
-    sum = 0
-    Series.find(id).sum = Series.find(id).pushups.each {|n| p sum +n.amount }
-    p 'olol'
-  end
 end
