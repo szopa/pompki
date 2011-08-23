@@ -19,7 +19,7 @@
       series: [{
       pointInterval: <%= 1.day * 1000 %>,
       pointStart: <%= 3.months.ago.to_i * 1000 %>,
-      data: <%=@series.each.map {|series| [series.without_hours, series.sum]}%>
+      data: <%=series_for_charts%>
 
       }]
     });

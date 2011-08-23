@@ -51,7 +51,11 @@ class SeriesController < ApplicationController
         format.json { render json: @series.errors, status: :unprocessable_entity }
       end
     end
-   # @series.sum= @series.pushups.amount.inject {|e, v| e+v}
+    
+   # sum = 0
+  #  @series.sum = @series.pushups.each {|n| p sum +n.amount }
+   # p @series.sum
+  #  @series.save!
   end
 
   # PUT /series/1

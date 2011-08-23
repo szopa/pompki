@@ -52,6 +52,8 @@ before_filter :authenticate_user!
         format.json { render json: @pushup.errors, status: :unprocessable_entity }
       end
     end
+    update_sum(@pushup.series_id)
+    p 'olaboga'
   end
 
   # PUT /pushups/1
