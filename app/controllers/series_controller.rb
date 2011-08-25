@@ -35,7 +35,7 @@ before_filter :authenticate_user!
 
   # GET /series/1/edit
   def edit
-    @series = current_usre.series.find(params[:id])
+    @series = current_user.series.find(params[:id])
   end
 
   # POST /series
