@@ -1,4 +1,5 @@
 class SeriesController < ApplicationController
+before_filter :authenticate_user!
   # GET /series
   # GET /series.json
   def index
@@ -13,7 +14,7 @@ class SeriesController < ApplicationController
   # GET /series/1
   # GET /series/1.json
   def show
-    @series = Series.find(params[:id])
+    @series = current_user.series.find(params[:id])
 
     respond_to do |format|
       format.html # show.html.erb
@@ -34,7 +35,7 @@ class SeriesController < ApplicationController
 
   # GET /series/1/edit
   def edit
-    @series = Series.find(params[:id])
+    @series = current_usre.series.find(params[:id])
   end
 
   # POST /series
@@ -58,7 +59,7 @@ class SeriesController < ApplicationController
   # PUT /series/1
   # PUT /series/1.json
   def update
-    @series = Series.find(params[:id])
+    @series = current_user.series.find(params[:id])
 
     respond_to do |format|
       if @series.update_attributes(params[:series])
@@ -76,7 +77,7 @@ class SeriesController < ApplicationController
   # DELETE /series/1
   # DELETE /series/1.json
   def destroy
-    @series = Series.find(params[:id])
+    @series = current_user.series.find(params[:id])
     @series.destroy
 
     respond_to do |format|
