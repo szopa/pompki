@@ -13,7 +13,7 @@
 <div name = 'user_navigation'>
   <% if user_signed_in?%>
   	zalogowany jako <%= current_user.email%>|
-  	<%= link_to 'Wyloguj się', destroy_user_session_path, :method => :delete %>
+  	<%= link_to 'Wyloguj się', destroy_user_session_path %>
   <% else %>
   	<%= link_to 'Zaloguj się', new_user_session_path %> albo <%=link_to 'zarejestruj się', new_user_registration_path  %>
   <% end %>
