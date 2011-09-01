@@ -4,4 +4,8 @@ class ApplicationController < ActionController::Base
     flash[:error] = "ACCESS DENIED!"
     redirect_to root_url
   end
+  rescue_from ActiveRecord::RecordInvalid do |ex|
+  end
+
+
 end
