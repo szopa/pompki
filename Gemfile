@@ -33,5 +33,7 @@ end
 
 group :test do
   # Pretty printed test output
+  gem "factory_girl_rails", "~> 1.2"
   gem 'turn', :require => false
+  gem 'capybara'
 end

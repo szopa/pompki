@@ -2,8 +2,4 @@
 
 one:
   user_id: 1
-  sum: 1
 
-two:
-  user_id: 1
-  sum: 1
