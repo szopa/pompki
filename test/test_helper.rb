@@ -16,4 +16,10 @@ class ActiveSupport::TestCase
 end
 class ActionDispatch::IntegrationTest
   include Capybara::DSL
+  def log_in
+    visit '/users/sign_in'
+    fill_in 'Email', :with => 'test@example.pl'
+    fill_in 'Password', :with => 'secret'
+    click_button 'Sign in'
+  end
 end
